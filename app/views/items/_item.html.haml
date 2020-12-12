@@ -1,0 +1,15 @@
+= link_to item_path(item), data:{turbolinks: false}  do
+  .item
+    -# = render partial: 'layouts/sold_out', locals: {item: item}
+    .item-top
+      - if item.images[0]
+        = image_tag item.images[0].src.url, class: "item-top__image"
+      .item-top__price
+        ¥
+        = item.price
+    .item-bottom
+      .item-bottom__name
+        = item.name
+      .item-bottom-price-good
+        .item-bottom-price-good__price
+        = fa_icon "heart", class:"item-bottom-price-good__good"
